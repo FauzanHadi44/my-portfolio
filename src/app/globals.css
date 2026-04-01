@@ -1,26 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400..900&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-audiowide: 'Audiowide', sans-serif;
+  --font-orbitron: 'Orbitron', sans-serif;
+
+  --bg-main: #faf8f5;
+  --bg-dark: #f5f0eb;
+  --bg-gray-700: #e8e2db;
+  --bg-gray-800: #ddd6cc;
+
+  --text-white: #1a1a1a;
+  /* Teks utama - dark charcoal (replaces white) */
+  --text-dim: #2d2d2d;
+  /* Teks untuk HeroSection & HeroManifesto */
+  --text-gray-300: #4a4a4a;
+  /* Teks dark gray untuk accent text */
+  --text-gray-400: #6b6b6b;
+  /* Teks abu-abu untuk hover Navbar */
+
+  /* --- 3. BORDER COLORS --- */
+  --border-gray-600: #c4b8a8;
+  /* Border untuk Badge & Button - warm light border */
+  --border-glass: rgba(0, 0, 0, 0.12);
+  /* Border glass effect untuk Navbar */
+
+  /* --- 4. GLASS EFFECT COLORS --- */
+  --glass-panel: rgba(250, 248, 245, 0.85);
+  /* Background Navbar panel */
+  --glass-highlight: rgba(0, 0, 0, 0.05);
+  /* Hover state / Active button Navbar */
+  --glass-bg-50: rgba(232, 226, 219, 0.5);
+  /* Background semi-transparan untuk Badge & Button */
+  --glass-bg-hover: rgba(221, 214, 204, 0.5);
+  /* Background hover semi-transparan untuk Button */
+
+  /* --- 5. ACCENT COLORS --- */
+  --accent-cyan: #0e7490;
+  /* Cyan accent untuk Navbar hover - darker for light bg */
+  --accent-green-500: #16a34a;
+  /* Green accent untuk status indicator */
+  --accent-green-400: #22c55e;
+  /* Green hover accent untuk status text */
+
+  /* --- 6. ABOUT SECTION COLORS --- */
+  --bg-white-5: rgba(0, 0, 0, 0.03);
+  /* Background card About section */
+  --bg-white-10: rgba(0, 0, 0, 0.06);
+  /* Background hover card About */
+  --bg-white-20: rgba(0, 0, 0, 0.1);
+  /* Divider line About */
+  --bg-green-900-40: rgba(220, 252, 231, 0.6);
+  /* Background gradient start untuk status card - light green */
+  --border-white-10: rgba(0, 0, 0, 0.08);
+  /* Border card About */
+  --border-green-500-30: rgba(34, 197, 94, 0.3);
+  /* Border hover status card */
+  --border-black-10: rgba(0, 0, 0, 0.1);
+  /* Border untuk My Focus card */
+  --text-gray-500: #8b8b8b;
+  /* Text gray untuk "Code" accent */
+  --bg-gray-200: #f0ebe5;
+  /* Background hover button */
+
+  /* --- 7. SKILLS SECTION COLORS --- */
+  --bg-blue-600-5: rgba(37, 99, 235, 0.05);
+  /* Background glow effect Skills section */
+  --border-white-30: rgba(0, 0, 0, 0.15);
+  /* Border hover card Skills */
+  --border-white-40: rgba(0, 0, 0, 0.2);
+  /* Border hover tech badge */
+  --border-white-5: rgba(0, 0, 0, 0.05);
+  /* Border divider Skills description */
+  --bg-black-50: rgba(245, 240, 235, 0.8);
+  /* Background tech badge - cream */
+
+  /* --- 8. CONTACT SECTION COLORS --- */
+  --bg-cyan-500-10: rgba(6, 182, 212, 0.08);
+  /* Background glow effect Contact section */
+  --bg-contact-input: rgba(0, 0, 0, 0.03);
+  /* Background input Contact form */
+  --bg-contact-input-focus: rgba(0, 0, 0, 0.05);
+  /* Background input focus Contact form */
+  --border-contact-input: rgba(0, 0, 0, 0.1);
+  /* Border input Contact form */
+  --border-contact-input-focus: #6b6b6b;
+  /* Border input focus Contact form */
+  --text-contact-placeholder: #a0a0a0;
+  /* Placeholder text Contact form */
+  --bg-contact-button: #1a1a1a;
+  /* Background button Contact form - dark button */
+  --text-contact-button: #ffffff;
+  /* Text button Contact form - white on dark */
+  --bg-contact-button-success: #22c55e;
+  /* Background button success state */
+  --bg-contact-button-error: #ef4444;
+  /* Background button error state */
+  --text-contact-button-white: #ffffff;
+  /* Text button success/error state */
+  --shadow-contact-button: rgba(0, 0, 0, 0.15);
+  /* Shadow hover button Contact */
+  --bg-social-container: rgba(0, 0, 0, 0.03);
+  /* Background social links container */
+  --border-social-container: rgba(0, 0, 0, 0.08);
+  /* Border social links container */
+  --border-social-container-hover: rgba(0, 0, 0, 0.15);
+  /* Border hover social links container */
+  --text-social-link: #6b6b6b;
+  /* Text social link */
+  --text-social-link-hover: #1a1a1a;
+  /* Text hover social link - darker on hover */
+  --bg-social-divider: rgba(0, 0, 0, 0.1);
+  /* Background divider social links */
+  --border-footer: rgba(0, 0, 0, 0.1);
+  /* Border footer */
+  --text-footer: #8b8b8b;
+  /* Text footer */
+
+  /* --- 9. OVERLAY COLORS --- */
+  --overlay-top: rgba(250, 248, 245, 0.6);
+  --overlay-mid: rgba(250, 248, 245, 0.5);
+  --overlay-btm: rgba(250, 248, 245, 0.7);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInDelay {
+
+  0%,
+  30% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSlow {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes loadingBar {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 1s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fadeInDelay 1.5s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 2s ease-in-out infinite;
+}
+
+.animate-loading-bar {
+  animation: loadingBar 4.5s ease-in-out;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.98 0.005 80);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(0.97 0.005 80);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(0.98 0.005 80);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.95 0.005 80);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.95 0.005 80);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.95 0.005 80);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.88 0.01 80);
+  --input: oklch(0.88 0.01 80);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.97 0.005 80);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.95 0.005 80);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.88 0.01 80);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+.about-hero-section {
+  @apply relative flex flex-col px-8 py-12 overflow-hidden;
+}
+
+.about-hero-container {
+  @apply max-w-7xl mx-auto w-full;
+}
+
+.about-hero-header {
+  @apply relative z-10 pb-10 lg:pb-20;
+}
+
+.about-hero-title {
+  @apply font-audiowide text-[15vw] lg:text-[12vw] font-black leading-none tracking-tighter transition-all duration-1000;
+}
+
+.about-hero-title-outline {
+  @apply text-transparent;
+  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.2);
+  text-stroke: 2px rgba(0, 0, 0, 0.2);
+}
+
+.about-hero-title-solid {
+  @apply text-[#1a1a1a];
+}
+
+.about-hero-grid {
+  @apply relative z-10 flex-1 grid grid-cols-1 lg:grid-cols-2 gap-2 items-end;
+}
+
+.about-hero-photo-wrapper {
+  @apply relative w-full max-w-md lg:max-w-lg mx-auto lg:mx-0;
+}
+
+.about-hero-photo-container {
+  @apply relative aspect-square;
+}
+
+.about-hero-photo-frame {
+  @apply relative w-full h-full rounded-3xl overflow-hidden border-2 border-black/10 bg-[#f0ebe5];
+}
+
+.about-hero-photo-label {
+  @apply absolute -top-6 left-0 text-[#6b6b6b] font-mono text-xs uppercase tracking-widest;
+}
+
+.about-hero-info {
+  @apply relative flex flex-col justify-end pb-0 lg:pb-8;
+}
+
+.about-hero-name-container {
+  @apply mb-8 text-center lg:text-left;
+}
+
+.about-hero-name {
+  @apply font-audiowide text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none tracking-tighter;
+}
+
+.about-hero-name-line {
+  @apply block text-[#1a1a1a];
+}
+
+.about-hero-location {
+  @apply flex items-center justify-center lg:justify-start gap-4 text-[#6b6b6b] text-sm;
+}
+
+.about-hero-location-text {
+  @apply font-mono uppercase tracking-wider;
+}
+
+/* Animation states */
+.about-hero-visible {
+  @apply opacity-100 translate-y-0;
+}
+
+.about-hero-hidden {
+  @apply opacity-0 -translate-y-10;
+}
+
+.about-hero-photo-visible {
+  @apply opacity-100 translate-x-0;
+}
+
+.about-hero-photo-hidden {
+  @apply opacity-0 -translate-x-20;
+}
+
+.about-hero-info-visible {
+  @apply opacity-100 translate-x-0;
+}
+
+.about-hero-info-hidden {
+  @apply opacity-0 translate-x-20;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }
