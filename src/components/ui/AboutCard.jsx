@@ -1,4 +1,3 @@
-// About section card container component
 export default function AboutCard({ children, variant = "default", className = "" }) {
     const variants = {
         default: "bg-black/3 border border-black/8 rounded-3xl p-8 hover:bg-black/5 transition-colors",

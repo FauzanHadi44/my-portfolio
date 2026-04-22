@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import ClientWrapper from "@/components/layout/ClientWrapper";
 
@@ -13,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Fauzan Hadi - Software Engineer & UI/UX Enthusiast",
+  title: "Fauzan Hadi",
   description: "Software Engineer & UI/UX Enthusiast",
   icons: {
     icon: '/favicon.ico',
@@ -23,6 +24,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="5d6c905d-7c91-4a20-8e64-9794153b823d"
+          strategy="afterInteractive"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning

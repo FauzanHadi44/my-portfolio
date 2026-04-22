@@ -1,4 +1,3 @@
-// src/components/Button.jsx
 import Link from "next/link";
 
 export default function Button({

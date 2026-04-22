@@ -20,7 +20,6 @@ export default function LoadingScreen({ isVisible, duration = 1500, onComplete }
             const elapsed = Date.now() - startTime;
             const pct = Math.min((elapsed / duration) * 100, 100);
 
-            // Ease-out curve for more natural feel
             const eased = 100 * (1 - Math.pow(1 - pct / 100, 3));
             setProgress(Math.round(eased));
 

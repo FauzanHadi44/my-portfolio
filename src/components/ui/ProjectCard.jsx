@@ -1,6 +1,5 @@
 import { CardContainer, CardBody, CardItem } from "./3d-card";
 
-// Project card container component with 3D effects
 export default function ProjectCard({ children, className = "" }) {
     return (
         <CardContainer containerClassName="py-4">
