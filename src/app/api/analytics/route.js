@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const UMAMI_API = 'https://cloud.umami.is/api';
+const UMAMI_API = 'https://api.umami.is/v1';
 const WEBSITE_CREATED_AT = new Date('2024-01-01').getTime();
 
 export async function GET(request) {

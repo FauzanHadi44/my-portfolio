@@ -23,16 +23,17 @@ export default function Footer() {
 
             const result = await res.json();
 
-            if (result.pageviews?.pageviews) {
-                const formatted = result.pageviews.pageviews.map(item => ({
-                    date: new Date(item.t || item.x).toLocaleDateString('id-ID', { day: 'numeric', month: 'short' }),
+            const pvArray = result.pageviews?.pageviews;
+            if (Array.isArray(pvArray)) {
+                const formatted = pvArray.map(item => ({
+                    date: new Date(item.x).toLocaleDateString('id-ID', { day: 'numeric', month: 'short' }),
                     views: item.y || 0
                 }));
                 setChartData(formatted);
             }
 
-            // Ambil total views
-            setTotalViews(result.stats?.pageviews?.value || 0);
+            const sv = result.stats?.pageviews;
+            setTotalViews(typeof sv === 'number' ? sv : (sv?.value || 0));
         } catch (error) {
             console.error("Footer Analytics Error:", error);
         } finally {
