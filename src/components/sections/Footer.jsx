@@ -89,7 +89,20 @@ export default function Footer() {
                                     <Tooltip 
                                         content={({ active, payload }) => (
                                             active && payload ? (
-                                                <div className="bg-neutral-900 border border-white/10 p-2 rounded shadow-xl text-[10px] font-mono">
+                                                <div
+                                                    style={{
+                                                        background: 'rgba(250, 248, 245, 0.95)',
+                                                        border: '1px solid rgba(0,0,0,0.12)',
+                                                        borderRadius: '8px',
+                                                        padding: '6px 10px',
+                                                        boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+                                                        backdropFilter: 'blur(8px)',
+                                                        fontSize: '10px',
+                                                        fontFamily: 'monospace',
+                                                        color: '#1a1a1a',
+                                                        fontWeight: '600',
+                                                    }}
+                                                >
                                                     {payload[0].value} views
                                                 </div>
                                             ) : null

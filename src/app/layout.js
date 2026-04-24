@@ -103,6 +103,34 @@ export default function RootLayout({ children }) {
           data-website-id="5d6c905d-7c91-4a20-8e64-9794153b823d"
           strategy="afterInteractive"
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Fauzan Hadi",
+              url: "https://fauzanhadi.my.id",
+              image: "https://fauzanhadi.my.id/image/profile.png",
+              jobTitle: "Software Engineer & UI/UX Enthusiast",
+              description:
+                "Software Engineer & UI/UX Enthusiast yang berfokus pada membangun aplikasi web dan mobile yang estetik, cepat, dan user-friendly.",
+              sameAs: [
+                "https://github.com/FauzanHadi44",
+                "https://www.linkedin.com/in/fauzanhadi",
+                "https://www.instagram.com/fauzanhadi",
+              ],
+              knowsAbout: [
+                "Software Engineering",
+                "UI/UX Design",
+                "Next.js",
+                "React",
+                "Flutter",
+                "Web Development",
+              ],
+            }),
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
