@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/sections/Footer";
 import { FileDown, ExternalLink } from "lucide-react";
 
 export default function ResumePage() {
@@ -75,6 +76,8 @@ export default function ResumePage() {
           </a>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

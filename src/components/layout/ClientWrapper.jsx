@@ -104,7 +104,6 @@ export default function ClientWrapper({ children }) {
         }
         requestAnimationFrame(raf);
 
-        // 1) Blokir keyboard shortcuts + tampilkan toast
         const blockKeys = (e) => {
             const blockedKeys = [
                 { key: 'F12' },
@@ -128,14 +127,12 @@ export default function ClientWrapper({ children }) {
             }
         };
 
-        // 2) Blokir klik kanan + tampilkan toast
         const blockContextMenu = (e) => {
             e.preventDefault();
             showToast();
             return false;
         };
 
-        // 3) Deteksi DevTools — jika terbuka, blank page
         let devtoolsOpen = false;
         const detectDevTools = () => {
             const threshold = 160;
