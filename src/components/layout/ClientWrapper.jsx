@@ -42,15 +42,16 @@ function BlockedToast({ show }) {
         >
             <div
                 style={{
-                    background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)',
-                    border: '1px solid rgba(255,255,255,0.12)',
+                    background: 'rgba(250, 248, 245, 0.92)',
+                    border: '1px solid rgba(0, 0, 0, 0.12)',
                     borderRadius: '16px',
                     padding: '14px 24px',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '12px',
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05)',
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06)',
                     backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(20px)',
                     animation: visible ? 'toastShake 0.4s ease' : 'none',
                     whiteSpace: 'nowrap',
                 }}
@@ -58,7 +59,7 @@ function BlockedToast({ show }) {
                 <span style={{ fontSize: '20px' }}>🚫</span>
                 <span
                     style={{
-                        color: '#fff',
+                        color: '#1a1a1a',
                         fontSize: '13px',
                         fontFamily: 'monospace',
                         fontWeight: '600',
