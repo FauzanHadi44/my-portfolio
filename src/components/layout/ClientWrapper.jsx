@@ -149,7 +149,6 @@ export default function ClientWrapper({ children }) {
             }
         };
 
-        // 4) Override console
         const noop = () => {};
         ['log','warn','error','info','debug','table','dir'].forEach(m => {
             console[m] = noop;
