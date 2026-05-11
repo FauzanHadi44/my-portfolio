@@ -8,19 +8,7 @@ export const projectsData = [
     tech: ["Next.js", "Tailwind CSS", "Figma", "Cloudinary", "Full-stack"],
     links: {
       demo: "https://www.kjpp-akr.co.id/",
-      github: "https://github.com/FauzanHadi44/KjppAKR.git"
-    }
-  },
-  {
-    id: 3,
-    title: "ANSA Konveksi",
-    category: "Company Profile",
-    image: "/image/project/ansa.jpg",
-    description: "A modern company profile website for ANSA Konveksi — specialists in custom apparel, jerseys, and clothing. Designed with a high-fidelity UI/UX identity in Figma and developed with Next.js, successfully deployed to Vercel with a custom domain and CI/CD pipeline.",
-    tech: ["Next.js", "Tailwind CSS", "Figma", "Vercel", "CI/CD"],
-    links: {
-      demo: "https://www.ansakonveksi.com/",
-      github: "https://github.com/FauzanHadi44/pandawaKonveksii.git"
+      github: "#"
     }
   },
   {
@@ -32,19 +20,19 @@ export const projectsData = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Resend", "Shadcn UI"],
     links: {
       demo: "https://asri1188.com",
-      github: "https://github.com/FauzanHadi44/CV-ASRI-1188.git"
+      github: "#"
     }
   },
   {
-    id: 5,
-    title: "LOKALOKE",
-    category: "SME Platform",
-    image: "/image/project/lokaloke.jpg",
-    description: "A web application developed for a web design competition, aimed at empowering local SMEs. Serves as a modern digital storefront to help local merchants improve their visibility and expand their market reach.",
-    tech: ["React.js", "Tailwind CSS", "Framer Motion"],
+    id: 3,
+    title: "ANSA Konveksi",
+    category: "Company Profile",
+    image: "/image/project/ansa.jpg",
+    description: "A modern company profile website for ANSA Konveksi — specialists in custom apparel, jerseys, and clothing. Designed with a high-fidelity UI/UX identity in Figma and developed with Next.js, successfully deployed to Vercel with a custom domain and CI/CD pipeline.",
+    tech: ["Next.js", "Tailwind CSS", "Vercel", "CI/CD"],
     links: {
-      demo: "https://lokaloke.vercel.app/",
-      github: "https://github.com/FauzanHadi44/LokalOKE.git"
+      demo: "https://www.ansakonveksi.com/",
+      github: "#"
     }
   },
   {
@@ -57,6 +45,18 @@ export const projectsData = [
     links: {
       demo: "https://ai-learning-insight-dicoding.vercel.app/",
       github: "https://github.com/Asah-AI-Learning-Insight/ai-learning-insight.git"
+    }
+  },
+  {
+    id: 5,
+    title: "LOKALOKE",
+    category: "SME Platform",
+    image: "/image/project/lokaloke.jpg",
+    description: "A web application developed for a web design competition, aimed at empowering local SMEs. Serves as a modern digital storefront to help local merchants improve their visibility and expand their market reach.",
+    tech: ["React.js", "Tailwind CSS", "Framer Motion"],
+    links: {
+      demo: "https://lokaloke.vercel.app/",
+      github: "https://github.com/FauzanHadi44/LokalOKE.git"
     }
   },
   {

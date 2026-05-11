@@ -8,7 +8,7 @@ export default function About() {
             <div className="mb-8">
                 <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#8b8b8b] mb-3">About Me</p>
                 <h2 className="font-audiowide text-4xl md:text-5xl lg:text-6xl font-black text-[#1a1a1a] tracking-tight">
-                    Beyond the Code
+                    Professional Summary
                 </h2>
             </div>
 

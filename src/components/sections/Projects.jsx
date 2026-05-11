@@ -259,9 +259,15 @@ export default function Projects() {
                                     <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#8b8b8b] mb-2">Links</p>
                                     <div className="flex flex-col gap-2">
                                         {selectedProject.links.github && (
-                                            <Link href={selectedProject.links.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#4a4a4a] text-sm hover:text-[#1a1a1a] transition-colors">
-                                                <Github className="w-4 h-4" /> Source Code
-                                            </Link>
+                                            selectedProject.links.github === "#" ? (
+                                                <div className="inline-flex items-center gap-2 text-[#8b8b8b] text-sm cursor-not-allowed opacity-60" title="Source code is confidential">
+                                                    <Github className="w-4 h-4" /> Source Code (Private)
+                                                </div>
+                                            ) : (
+                                                <Link href={selectedProject.links.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#4a4a4a] text-sm hover:text-[#1a1a1a] transition-colors">
+                                                    <Github className="w-4 h-4" /> Source Code
+                                                </Link>
+                                            )
                                         )}
                                         {selectedProject.links.demo && selectedProject.links.demo !== "#" && (
                                             <Link href={selectedProject.links.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#4a4a4a] text-sm hover:text-[#1a1a1a] transition-colors">
