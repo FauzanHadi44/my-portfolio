@@ -36,7 +36,7 @@ export const projectsData = [
     }
   },
   {
-    id: 4,
+    id: 5,
     title: "LOKALOKE",
     category: "SME Platform",
     image: "/image/project/lokaloke.jpg",
@@ -48,7 +48,7 @@ export const projectsData = [
     }
   },
   {
-    id: 5,
+    id: 4,
     title: "AI Learning Insight",
     category: "Capstone Project",
     image: "/image/project/ailearning.jpg",
