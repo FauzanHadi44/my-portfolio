@@ -12,7 +12,7 @@ export const projectsData = [
     }
   },
   {
-    id: 2,
+    id: 3,
     title: "ANSA Konveksi",
     category: "Company Profile",
     image: "/image/project/ansa.jpg",
@@ -24,7 +24,7 @@ export const projectsData = [
     }
   },
   {
-    id: 3,
+    id: 2,
     title: "CV ASRI 1188",
     category: "Company Profile",
     image: "/image/project/asri1188.jpg",
